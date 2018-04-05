@@ -1,0 +1,4 @@
+git config user.email "jinwookang00@gmail.com"
+git config user.name "hari-MJW"
+
+git init
