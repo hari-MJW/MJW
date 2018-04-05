@@ -1,0 +1,78 @@
+########## CSS reset ##########
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+########## CSS ##########
+# display
+- block, inline-block, inline, none
+- flex
+- grid
+
+# box-sizing
+- content-box (기본값)
+- border-box (width 에 padding, border 포함, ie8 이상 지원)
+
+# display: inline-block 으로 하고 section 두개를 각각 40% 60% 해도
+<section class="a">
+</section>
+<section class="b">
+</section>
+section.a 와 section.b 사이의 개행문자가 포함되어 나란히 붙지를 않는다. 물론 </secion><section... 와 같이 붙여도 되지만 가독성 떨어짐
+>> 상위 dis font-size:0 으로 맞춰주고 하위 자식들 font-size 지정해주면 해결!!
+
+# 1rem : root em - html 이 가지고 있는 폰트 사이즈를 기본으로 쓰겠다는 의미! 보통의 브라우저는 16px 
+# 사이즈 지정은 % 이용하고 max-width 로 최대 사이즈 지정하는 방식으로... margin: 0 auto; vertical-align: top;
+# float 상속을 삭제하려면 clear: both; 요새는 div:after 요거 사용해서 css 에서 가상 엘리먼트 생성하는 방법을 사용한다.
+
+
+
+########## HTML5 ##########
+- <!DOCTYPE html>
+- <meta charset=“UTF-8”>
+- header, section, article, footer
