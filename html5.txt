@@ -75,4 +75,4 @@ section.a 와 section.b 사이의 개행문자가 포함되어 나란히 붙지�
 ########## HTML5 ##########
 - <!DOCTYPE html>
 - <meta charset=“UTF-8”>
-- header, section, article, footer
+- 시멘틱 header, section, article, footer
