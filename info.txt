@@ -3,4 +3,14 @@ git config user.name "hari-MJW"
 
 git init
 
+## 원격 git 연결
 git remote add origin https://github.com/hari-MJW/MJW.git
+
+## commit
+push to..
+
+## update
+git pull origin master
+
+## push 가 refusing to merge unrelated histories 일 때
+git pull origin master --allow-unrelated-histories
