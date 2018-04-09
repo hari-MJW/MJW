@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>웹페이지 실전01</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+        <link href="http://fonts.googleapis.com/css?family=Hi+Melody" rel="stylesheet">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        <link href="http://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+        <style>
+            body {
+                font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+                margin: 0;
+            }
+            a {
+                text-decoration: none;
+            }
+            a:hover {
+                text-decoration: underline;
+            }
+            ul, li {
+                list-style: none;
+                margin: 5px 10px;
+                padding: 0;
+                display: inline-block;
+            }
+            nav {
+                background-color: #2d1152;
+                color: #FFF;
+            }
+            nav a {
+                color: #FFF;
+                font-size: 13px;
+            }
+            .iconDownCaret:after {
+                content: '▼';
+            }
+            .show-font ul li {display: block;}
+            .font01 {font-family: 'Hi Melody' !important;}
+            .font02 {font-family: 'Open Sans' !important;}
+            .font03 {font-family: 'Lobster' !important;}
+        </style>
+        <script src="../js/jquery-3.3.1.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('a').unbind('click').bind('click',function() {
+                    return false;
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Mail</a></li>
+                    <li><a href="#">Flickr</a></li>
+                    <li><a href="#">Tumblr</a></li>
+                    <li><a href="#">Entertainment</a></li>
+                    <li><a href="#">Lifestyle</a></li>
+                    <li><a href="#">Mobile</a></li>
+                    <li><a href="#">View</a></li>
+                    <li class="iconDownCaret"><a href="#">More</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="show-font">
+            <ul>
+                <li class="font01">가나다라마바사아자차카타파하 abcdefghijklmnopqrstuvwxyz 0123456789</li>
+                <li class="font02">가나다라마바사아자차카타파하 abcdefghijklmnopqrstuvwxyz 0123456789</li>
+                <li class="font03">가나다라마바사아자차카타파하 abcdefghijklmnopqrstuvwxyz 0123456789</li>
+            </ul>
+        </div>
+    </body>
+</html>

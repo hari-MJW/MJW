@@ -68,11 +68,29 @@ section.a 와 section.b 사이의 개행문자가 포함되어 나란히 붙지�
 
 # 1rem : root em - html 이 가지고 있는 폰트 사이즈를 기본으로 쓰겠다는 의미! 보통의 브라우저는 16px 
 # 사이즈 지정은 % 이용하고 max-width 로 최대 사이즈 지정하는 방식으로... margin: 0 auto; vertical-align: top;
-# float 상속을 삭제하려면 clear: both; 요새는 div:after 요거 사용해서 css 에서 가상 엘리먼트 생성하는 방법을 사용한다.
-
+# float 상속을 삭제하려면
+1. clear: both; 요새는 div:after 요거 사용해서 css 에서 가상 엘리먼트 생성하는 방법을 사용한다.
+.container:after {
+	content: '';
+	display: block;
+	clear: both;
+	height: 0;
+	visibility: hidden;
+}
+2. 상위 객체의 overflow: hidden; (li 인 경우 ul에..)
 
 
 ########## HTML5 ##########
 - <!DOCTYPE html>
 - <meta charset=“UTF-8”>
-- 시멘틱 header, section, article, footer
+- 시멘틱 태그 header, section, article, footer, aside, details, 
+  figcaption, figure, main, mark, nav, summary, time 등등
+
+
+########## Socicon #########
+- <link rel="stylesheet" href="https://d1azc1qln24ryf.cloudfront.net/114779/Socicon/style-cf.css?9ukd8d">
+
+######## viewport 속성 ########
+# width, height, initial-scale, minimum-scale, maximum-scale
+# user-scalable=no 확대 및 축소 가능 여부
+
