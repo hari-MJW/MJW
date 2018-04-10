@@ -12,14 +12,78 @@
                 color: white;
             }
         </style>
+        <script src="../js/jquery-3.3.1.min.js"></script>
+        <script src="./js/bootstrap.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('a').not('.dropdown-toggle').click(function() {
+                    return false;
+                });
+            });
+        </script>
     </head>
     <body>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" 
+                    data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="#" class="navbar-brand">코딩 부스터</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">소개<span class="sr-only"></span></a></li>
+                        <li><a href="#">강사진</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" 
+                            role="button" aria-haspopup="true" 
+                            aria-expanded="false">강의<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">C언어</a></li>
+                                <li><a href="#">JAVA</a></li>
+                                <li><a href="#">안드로이드</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="navbar-form navbar-left">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="내용을 입력하세요.">
+                        </div>
+                        <button type="submit" class="btn btn-default">검색</button>
+                    </form>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" 
+                                role="button" aria-haspopup="true" 
+                                aria-expanded="false">접속하기<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">로그인</a></li>
+                                <li><a href="#">회원가입</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
         <div class="container">
             <div class="jumbotron">
                 <h1 class="text-center">코딩 부스터를 소개합니다.</h1>
                 <p class="text-center">코딩 부스터는 IT 교육 사이트입니다. 다양한 IT 관련 무료 및 유료 강의가 존재합니다.</p>
-                <p class="text-center"><a class="btn btn-primary btn-lg" href="#" role="button">강의 들으러 가기.</a></p>
+                <p class="text-center">
+                    <a class="btn btn-primary btn-lg" href="#" role="button">강의 들으러 가기.</a>
+                </p>
             </div>
         </div>
+<!--
+    container : 반응형 고정폭 콘테이너 (fixed-width)
+    container-fluid : 뷰포트 전체폭까지 늘어나는 최대폭 콘테이너 (full-width)
+    sr-only : 스크린 리더같은 보조 공학에게 아이콘의 의미를 확실하게 전달하는 것을 확실히 하려면, .sr-only 클래스로 추가적인 숨겨진 텍스트가 포함되거나 aria-describedby 을 사용하는 폼콘트롤과 연관되어 있어야 합니다. 그렇지 않으면, 의미를 (예를 들면, 특정 텍스트 입력 필드를 위한 경고) 폼콘트롤에 연결된 <label> 의 텍스트를 바꾸는 것 처럼 다른 폼에서 전달하는 것을 확실히 하셔야 합니다.
+    aria-describedby : input type="text" 속성에 넣어서 스크린 리더로 읽을 내용의 id 를 지정한다.
+-->
     </body>
 </html>
