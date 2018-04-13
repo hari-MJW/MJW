@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>VueJS</title>
+        <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
+        <meta >
+        <script src="../js/vue.min.js"></script>
+        <script src="../js/jquery-3.3.1.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                var app = new Vue({
+                    el: '#app',
+                    data: {
+                        message: '안녕하세요 Vue!'
+                    }
+                });
+                var app2 = new Vue({
+                    el: '#app2',
+                    data: {
+                        message: '이 페이지는 '+new Date()+'에 로드되었습니다.'
+                    }
+                });
+                var app3 = new Vue({
+                    el: '#app3',
+                    data: {
+                        seen: true
+                    }
+                });
+                $('#app3').click(function() {
+                    app3.seen = !app3.seen;
+                });
+                var app4 = new Vue({
+                    el: '#app4',
+                    data:  {
+                        todos: [
+                            { text: 'JavaScript 배우기'},
+                            { text: 'Vue 배우기'},
+                            { text: '무언가 멋진 것을 만들기'}
+                        ]
+                    }
+                });
+                var app5 = new Vue({
+                    el: '#app5',
+                    data: {
+                        message: '안녕하세요! Vue.js!'
+                    },
+                    methods: {
+                        reverseMessage: function() {
+                            this.message = this.message.split('').reverse().join('');
+                        }
+                    }
+                });
+                var app6 = new Vue({
+                    el: '#app6',
+                    data: {
+                        message: '안녕하세요! Vue!'
+                    }
+                });
+                Vue.component('todo-item', {
+                    props: ['todo'],
+                    template: '<li>{{todo.text}}</li>'
+                });
+                var app7 = new Vue({
+                    el: '#app7',
+                    data: {
+                        groceryList: [
+                            {id: 0, text: 'Vegetables'},
+                            {id: 1, text: 'Cheese'},
+                            {id: 2, text: 'Whatever else humans are supposed to eat'}
+                        ]
+                    },
+                    methods: {
+                        checkAttr: function() {
+                            alert($('#app7').html());
+                        }
+                    }
+                });
+                var obj = {
+                    foo: 'bar'
+                };
+                Object.freeze(obj);
+                new Vue({
+                    el: '#app8',
+                    data() {
+                        return {
+                            obj
+                        }
+                    }
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div id="app">{{message}}</div>
+        <hr>
+        <div id="app2">
+            <span v-bind:title="message">
+                내 위에 잠시 마우스를 올리면 동적으로 바인딩 된 title 을 볼 수 있습니다.
+            </span>
+        </div>
+        <hr>
+        <div id="app3" style="border: 1px solid #000; width: 300px; height: 50px; display: block;">
+            <p v-if="seen">이제 나를 볼 수 있어요</p>
+        </div>
+        <hr>
+        <div id="app4">
+            <ol>
+                <li v-for="todo in todos">
+                    {{ todo.text }}
+                </li>
+            </ol>
+        </div>
+        <hr>
+        <div id="app5">
+            <p>{{ message }}</p>
+            <button v-on:click="reverseMessage">메시지 뒤집기</button>
+        </div>
+        <hr>
+        <div id="app6">
+            <p>{{message}}</p>
+            <input type="text" v-model="message" />
+        </div>
+        <hr>
+        <div id="app7" class="test1">
+            <ol v-on:click="checkAttr" class="test2">
+                <todo-item v-for="item in groceryList" v-bind:todo="item" v-bind:key="item.id"></todo-item>
+            </ol>
+        </div>
+        <hr>
+        <div id="app8">
+            <p>{{obj.foo}}</p>
+            <button @click="obj.foo = 'baz'">Change It</button>
+        </div>
+    </body>
+</html>
