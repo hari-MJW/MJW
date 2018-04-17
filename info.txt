@@ -6,6 +6,9 @@ git init
 ## 원격 git 연결
 git remote add origin https://github.com/hari-MJW/MJW.git
 
+## 원격 git 변경
+git remote set-url origin https://github.com/1ilsang/Vue.js-Quick-Start
+
 ## commit
 push to..
 

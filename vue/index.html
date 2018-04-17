@@ -3,9 +3,13 @@
     <head>
         <title>VueJS</title>
         <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0">
-        <meta >
-        <script src="../js/vue.min.js"></script>
-        <script src="../js/jquery-3.3.1.min.js"></script>
+        <!-- 
+            script 태그를 head 에 위치시킬 경우 브라우저가 구문 분석 중 js 파일을 로드하기 위해 멈춤.
+            그래서 이전에는 body 태그 맨 끝에 위치시키기도 했으나 요새는 async 를 통해
+            구문분석을 멈추지 않고 js 로딩함.
+        -->
+        <script src="../js/vue.min.js" async></script>
+        <script src="../js/jquery-3.3.1.min.js" async></script>
         <script>
             $(document).ready(function() {
                 var app = new Vue({

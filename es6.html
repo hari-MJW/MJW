@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ECMA6 Test</title>
+        <meta charset="UTF-8">
+        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <script>
+            function scope1() {
+                var a = 3;
+                if(true) {
+                    var a = 4;
+                }
+                console.log(a);
+                //
+            }
+            function scope2() {
+                let a = 3;
+                if(true) {
+                    let a = 4;
+                    console.log(a);
+                }
+                console.log(a);
+            }
+            /*
+            var functionArr = [];
+            for(let i=0;i<3;i++) {
+                functionArr.push(function() {
+                    colsole.log(i);
+                });
+            }
+
+            for(var j=0;j<3;j++) {
+                functionArr[j]();
+            }
+            */
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        <span class="glyphicon glyphicon-pencil"></span>
+                        &nbsp;&nbsp;ECMA6(European Computer Manufacturers Association)
+                    </h3>
+                </div>
+                <div class="panel-body">
+                    <h4 class="media-heading"><a href="#">트랜스파일러(Transpiler)&nbsp;<!--<span class="badge">New</span>--></a></h4>
+                    - ES6 소스코드를 ES5 소스 코드로 변환하여 거의 모든 자바스크립트 엔진에서 사용할 수 있게 해주는 것
+                    <br/>ex) 바벨, 구글 카자, 구글 트레이서, 터미 등
+                </div>
+                <div class="panel-body">
+                    <h4 class="media-heading"><a href="#">변수 선언 var, let, const&nbsp;</a></h4>
+                    <button onclick="scope1();">scope1</button>
+                    <button onclick="scope2();">scope2</button>
+                </div>
+                
+        
+            </div>
+        </div>
+    </body>
+</html>
