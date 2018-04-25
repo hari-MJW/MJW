@@ -24,7 +24,7 @@ vue init webpack todos-client
 use NPM >> Enter
 
 # start
-cd todo-client
+cd todos-client
 npm run dev
 
 
