@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Vue CDN Test</title>
+        <meta charset="UTF-8">
+        <script src="https://unpkg.com/vue"></script>
+    </head>
+    <body>
+        <div id="app" v-bind:title="title" style="border:1px solid red;">
+            <p>{{ message }}</p>
+            <div><button v-on:click="changeVisible">보이기 테스트</button></div>
+            <p v-if="seen">보이기 테스트 결과</p>
+            <ul>
+                <li v-on:click="reverseList" v-for="el in list">
+                    {{ el.name }} / {{el.number}}
+                </li>
+            </ul>
+            <div>
+                <p>MODEL Test : {{ model }}</p>
+                <input v-model="model" />
+            </div>
+        </div>
+        <script>
+            let app = new Vue({
+                el: '#app',
+                data: {
+                    message: '안녕하세요 Vue!!',
+                    title: 'Test Title',
+                    seen: false,
+                    model: '값을 입력하세요.',
+                    list: [
+                        {name: 'TEST1', number: '4'},
+                        {name: 'TEST2', number: '3'},
+                        {name: 'TEST3', number: '2'},
+                        {name: 'TEST4', number: '1'}
+                    ],
+                    changeVisible: function(obj) {
+                        //이 위치에서의 this = window
+                        app.seen = !app.seen;
+                    },
+                    reverseList: function() {
+                        //이 위치에서의 this = window
+                        app.list = app.list.reverse();
+                        //console.log(this.location.href);
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>
