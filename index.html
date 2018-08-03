@@ -13,9 +13,22 @@
 			.container {
 
 			}
+			.testHover {
+				text-decoration:none;
+				color: #000;
+				box-shadow: inset 0 -2px 0 #0dbe98;
+				transition: box-shadow .3s ease-out,background-color .3s ease-out;
+			}
+			.testHover:hover {
+				background-color: rgba(13,190,152,.7);
+				box-shadow: inset 0 -2px 0 rgba(13,190,152,0);
+			}
 		</style>
 	</head>
 	<body>
+		<div style="margin-bottom:20px;">
+			웹에서 자주 나오는 anchor hover <a href="#" class="testHover">TEST</a> 입니다.
+		</div>
 		<div class="container">
 			<section class="item item-a">
 				<h1>Section a</h1>
